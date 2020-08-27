@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Low Thunder</title>
+		<meta name="description" content="Demo of the game: Low Thunder for TJU SSE web design course" />
+		<meta name="author" content="POROS666 1850953 Xu" />
+		<link rel="shortcut icon" href="飞机.ico">
+		<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/game.css" />
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/three.min.js"></script>
+		<script type="text/javascript" src="js/gameplay.js"></script>
+		<!--[if IE]>
+		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="game-holder" id="gameHolder">
+			<div class="header">
+				<h2>Grab Blue Stone and Avoid Red Stone</h2>
+				<!-- 计分板：通过更新DOM元素更新 -->
+				<div class="score" id="score">
+					<div class="score_container" id="count">
+						<div class="score_label">points</div>
+						<div class="score_value" id="countValue">000</div>
+					</div>
+					<div class="score_container" id="dist">
+						<div class="score_label">distance</div>
+						<div class="score_value" id="distValue">000</div>
+					</div>					
+					<div class="score_container" id="health">
+						<div class="score_label">health</div>
+						<div class="score_value" id="healthValue">000</div>
+					</div>
+				</div>
+			</div>
+			<!-- 游戏渲染到world div -->
+			<div class="world" id="world"></div>
+			<div class="message message--replay" id="replayMessage">F5 to Replay</div>
+		</div>
+	</body>
+</html>
