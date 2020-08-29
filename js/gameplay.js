@@ -337,7 +337,7 @@ CoinsHolder.prototype.spawnCoins = function () {
 CoinsHolder.prototype.refreshCoins = function () {
   for (var i = 0; i < this.coinsInUse.length; i++) {
     var coin = this.coinsInUse[i]
-    coin.mesh.position.x -= 1
+    coin.mesh.position.x -= 1+0.01*game_distance
     var diffPos = airplane.mesh.position.clone().sub(coin.mesh.position.clone())
     var d = diffPos.length()
     if (d < 100) {
@@ -354,7 +354,7 @@ CoinsHolder.prototype.refreshCoins = function () {
 }
 // 石头构造函数
 Stone = function () {
-  var geom = new THREE.TetrahedronGeometry(5, 0)
+  var geom = new THREE.TetrahedronGeometry(10, 0)
   var mat = new THREE.MeshPhongMaterial({
     color: 0xf25346,
     shininess: 0,
@@ -396,7 +396,7 @@ StonesHolder.prototype.spawnStones = function () {
 StonesHolder.prototype.refreshStones = function () {
   for (var i = 0; i < this.StonesInUse.length; i++) {
     var Stone = this.StonesInUse[i]
-    Stone.mesh.position.x -= 1
+    Stone.mesh.position.x -= 1+0.01*game_distance
     var diffPos = airplane.mesh.position
       .clone()
       .sub(Stone.mesh.position.clone())
@@ -460,8 +460,8 @@ function loop() {
     updateDistance()
     coinsHolder.refreshCoins()
     StonesHolder.refreshStones()
-    sea.mesh.rotation.z += 0.003
-    sky.mesh.rotation.z += 0.003
+    sea.mesh.rotation.z += 0.003+0.00005*game_distance
+    sky.mesh.rotation.z += 0.003+0.00005*game_distance
     //console.log(game_distance)
 
     renderer.render(scene, camera) //渲染场景
